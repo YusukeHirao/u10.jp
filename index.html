@@ -10,13 +10,37 @@
       content="Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。"
     />
     <style>
+      :root {
+        --bgc: #fff;
+        --fc: #333;
+        --link: #00e;
+        --visited: #551a8b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bgc: #222;
+          --fc: #fff;
+          --link: rgb(163, 163, 240);
+          --visited: #aa8dc5;
+        }
+      }
       html {
         font-family: Helvetica, sans-serif;
+      }
+      body {
+        color: var(--fc);
+        background-color: var(--bgc);
       }
       header,
       section {
         max-width: 60rem;
         margin: 0 auto;
+      }
+      a:link {
+        color: var(--link);
+      }
+      a:visited {
+        color: var(--visited);
       }
       .npmv {
         vertical-align: middle;
