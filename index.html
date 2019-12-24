@@ -10,8 +10,26 @@
       content="Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。"
     />
     <style>
+      :root {
+        --bgc: #fff;
+        --fc: #333;
+        --link: #00e;
+        --visited: #551a8b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bgc: #222;
+          --fc: #fff;
+          --link: rgb(163, 163, 240);
+          --visited: #aa8dc5;
+        }
+      }
       html {
         font-family: Helvetica, sans-serif;
+      }
+      body {
+        color: var(--fc);
+        background-color: var(--bgc);
       }
       header,
       section {
@@ -21,6 +39,12 @@
       }
       h1 span {
         display: inline-block;
+      }
+      a:link {
+        color: var(--link);
+      }
+      a:visited {
+        color: var(--visited);
       }
       .npmv {
         vertical-align: middle;
@@ -96,6 +120,36 @@
           <h3>ウェブアクセシビリティ</h3>
           <ul>
             <li>
+              2019年11月16日
+              <a
+                href="https://frontend-conf.fukuoka.jp/sessions#c-2"
+                target="_blank"
+                referrerpolicy="noreferrer noopener"
+                >Frontend Conference Fukuoka 2019</a
+              >
+              <div>
+                ワークショップ: Webアクセシビリティ向上につながる実装を体験！
+              </div>
+            </li>
+            <li>
+              2019年9月25日
+              <a
+                href="https://uxmilk.connpass.com/event/146112/"
+                target="_blank"
+                referrerpolicy="noreferrer noopener"
+                >UX JAM in FUKUOKA 01</a
+              >
+              <div>
+                スライド:
+                <a
+                  href="https://docs.google.com/presentation/d/1iHY_5eWjpod3brvzO3BgwFazhHCUViOy2Wwb5VkJrEQ"
+                  target="_blank"
+                  referrerpolicy="noreferrer noopener"
+                  >アクセシビリティを学んでデザインの解像度を上げる
+                </a>
+              </div>
+            </li>
+            <li>
               2019年8月24日
               <a
                 href="https://sacss-sp23.peatix.com/"
@@ -132,6 +186,25 @@
               </div>
             </li>
             <li>
+              2018年12月8日
+              <a
+                href="https://2018.frontend-conf.fukuoka.jp/sessions#a-2"
+                target="_blank"
+                referrerpolicy="noreferrer noopener"
+                >Frontend Conference Fukuoka 2018</a
+              >
+              <div>
+                スライド:
+                <a
+                  href="https://cacoo.com/diagrams/0LX71YlcJNBMSB21/D03BF"
+                  target="_blank"
+                  referrerpolicy="noreferrer noopener"
+                  >スポンサーセッション ディーゼロ &amp;
+                  ヌーラボ「これからのWebアプリケーションに求められるアクセシビリティの設計と実装」</a
+                >
+              </div>
+            </li>
+            <li>
               2018年8月10日
               <a
                 href="https://a11ystep.connpass.com/event/96310/"
@@ -154,6 +227,18 @@
         <section>
           <h3>フロントエンド</h3>
           <ul>
+            <li>
+              2019年11月19日
+              <a
+                href="https://frontend-conf.fukuoka.jp/sessions#a-4"
+                target="_blank"
+                referrerpolicy="noreferrer noopener"
+                >Frontend Conference Fukuoka 2019</a
+              >
+              <div>
+                セッションタイトル: デザイナーにエンジニアから10の質問
+              </div>
+            </li>
             <li>
               2019年3月5日
               <a
@@ -333,6 +418,35 @@
           <dd>神奈川県川崎市</dd>
           <dt>所在</dt>
           <dd>福岡県福岡市</dd>
+          <dt><abbr title="Social Networking Service">SNS</abbr></dt>
+          <dd>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/YusukeHirao"
+                  target="_blank"
+                  referrerpolicy="noreferrer noopener"
+                  >Github</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/cloud10designs"
+                  target="_blank"
+                  referrerpolicy="noreferrer noopener"
+                  >Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/yusukehirao"
+                  target="_blank"
+                  referrerpolicy="noreferrer noopener"
+                  >Facebook</a
+                >
+              </li>
+            </ul>
+          </dd>
         </dl>
       </section>
     </main>
