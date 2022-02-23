@@ -1,6 +1,6 @@
 {
   "name": "yusukehirao.github.com",
-  "version": "2020.12.15",
+  "version": "2022.2.23",
   "description": "Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。",
   "main": "index.html",
   "repository": "git@github.com:YusukeHirao/yusukehirao.github.com.git",
@@ -11,6 +11,6 @@
     "start": "php -S localhost:4000 -t ./"
   },
   "devDependencies": {
-    "markuplint": "^1.5.0"
+    "markuplint": "^2.1.0"
   }
 }
