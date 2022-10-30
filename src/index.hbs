@@ -1,0 +1,229 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>平尾ゆうてんのウェブサイト</title>
+    <meta
+      name="description"
+      content="Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。"
+    />
+    <style>
+      :root { --bgc: #fff; --fc: #333; --link: #00e; --visited: #551a8b; }
+      @media (prefers-color-scheme: dark) { :root { --bgc: #222; --fc: #fff;
+      --link: rgb(163, 163, 240); --visited: #aa8dc5; } } html { font-family:
+      Helvetica, sans-serif; } body { color: var(--fc); background-color:
+      var(--bgc); } header, section { max-width: 60rem; margin: 0 auto; padding:
+      0 1rem; } h1 span { display: inline-block; } a:link { color: var(--link);
+      } a:visited { color: var(--visited); } .npmv { vertical-align: middle;
+      margin: 0.2em 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><span>平尾ゆうてんの</span><span>ウェブサイト</span></h1>
+    </header>
+    <main>
+      <section>
+        <h2>開発しているもの</h2>
+        <ul>
+          <li>
+            <a
+              class="npmv"
+              href="https://markuplint.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >markuplint</a>
+            <img
+              class="npmv"
+              src="https://badge.fury.io/js/markuplint.svg"
+              alt="npm package version"
+              height="20"
+              decoding="async"
+              loading="lazy"
+            />
+          </li>
+          <li>
+            <a
+              class="npmv"
+              href="http://jaco-project.github.io/docs/"
+              target="_blank"
+              rel="noreferrer"
+            >jaco</a>
+            <img
+              class="npmv"
+              src="https://badge.fury.io/js/jaco.svg"
+              alt="npm package version"
+              height="20"
+              decoding="async"
+              loading="lazy"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>記事</h2>
+        <h3>ブログ</h3>
+        <ul>
+          {{#each articles}}
+            <li>
+              <time
+                datetime="{{dateFormat this.pubDate 'YYYY-MM-DD'}}"
+              >{{dateFormat this.pubDate "YYYY年MM月DD日"}}</time>
+              <span>[{{this.type}}]</span>
+              <a
+                href="{{this.link}}"
+                target="_blank"
+                rel="noreferrer"
+              >{{this.title}}</a>
+            </li>
+          {{/each}}
+        </ul>
+        <h3>寄稿記事</h3>
+        <ul>
+          <li>
+            UX MILK -
+            <a
+              href="https://uxmilk.jp/84998"
+              target="_blank"
+              rel="noreferrer"
+            >アクセシビリティからデザインを学ぼう</a>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>登壇</h2>
+        <ul>
+          {{#each cms.speaks.contents}}
+            <li>
+              <div><time
+                  datetime="{{dateFormat this.date 'YYYY-MM-DD'}}"
+                >{{dateFormat this.date "YYYY年MM月DD日"}}</time>
+                <a
+                  href="{{this.eventUrl}}"
+                  target="_blank"
+                  rel="noreferrer"
+                >{{this.eventName}}</a></div>
+              <div>
+                {{#if this.slideUrl}}
+                  <a
+                    href="{{this.slideUrl}}"
+                    target="_blank"
+                    rel="noreferrer"
+                  >{{this.sessionTitle}}</a>
+                {{else}}
+                  <span>{{this.sessionTitle}}</span>
+                {{/if}}
+                {{#if this.videoArchiveUrl}}
+                  <span>(<a
+                      href="{{this.videoArchiveUrl}}"
+                      target="_blank"
+                      rel="noreferrer"
+                    >動画</a>)</span>
+                {{/if}}
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+
+      <section>
+        <h2>過去の活動</h2>
+        <section>
+          <h3>勉強会</h3>
+          <ul>
+            <li>
+              <a
+                href="https://a11ystep.connpass.com"
+                target="_blank"
+                rel="noreferrer"
+              >Accessibility Step</a>
+            </li>
+            <li>
+              <a
+                href="https://fec-fukuoka.connpass.com"
+                target="_blank"
+                rel="noreferrer"
+              >フロントエンドカンファレンス福岡</a>
+            </li>
+            <li>
+              <a
+                href="https://fff.connpass.com/"
+                target="_blank"
+                rel="noreferrer"
+              >Fukuoka Frontend Frogs</a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>Podcast</h3>
+          <ul>
+            <li>
+              <a
+                href="https://anchor.fm/fukuokazatsudanradio"
+                target="_blank"
+                rel="noreferrer"
+              >ちょっとお隣よかですか？ - 福岡IT系雑談ラジオ</a>
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h2>プロフィール</h2>
+        <dl>
+          <dt>本名</dt>
+          <dd>
+            <ruby>平<rp>(</rp><rt>ひら</rt><rp>)</rp>尾<rp>(</rp><rt>お</rt><rp
+              >)</rp></ruby><ruby>優<rp>(</rp><rt>ゆう</rt><rp>)</rp>典<rp
+              >(</rp><rt>すけ</rt><rp>)</rp></ruby>
+          </dd>
+          <dt>専門分野</dt>
+          <dd>ウェブアクセシビリティ</dd>
+          <dd>フロントエンドエンジニアリング</dd>
+          <dd>ユーザーインターフェイスデザイン</dd>
+          <dt>所属</dt>
+          <dd>
+            <a
+              href="https://www.d-zero.co.jp"
+              target="_blank"
+              rel="noreferrer"
+            >株式会社ディーゼロ</a>
+          </dd>
+          <dt>出身</dt>
+          <dd>神奈川県川崎市</dd>
+          <dt>所在</dt>
+          <dd>福岡県福岡市</dd>
+          <dt><abbr title="Social Networking Service">SNS</abbr></dt>
+          <dd>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/YusukeHirao"
+                  target="_blank"
+                  rel="noreferrer"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/cloud10designs"
+                  target="_blank"
+                  rel="noreferrer"
+                >Twitter</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/yusukehirao"
+                  target="_blank"
+                  rel="noreferrer"
+                >Facebook</a>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </section>
+    </main>
+  </body>
+</html>

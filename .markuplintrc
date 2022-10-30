@@ -2,6 +2,12 @@
   "extends": [
     "markuplint:recommended"
   ],
+  "parser": {
+    "\\.hbs$": "@markuplint/mustache-parser"
+  },
+  "rules": {
+    "doctype": false
+  },
   "nodeRules": [
     {
       "selector": "img:not([width])",

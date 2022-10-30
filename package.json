@@ -1,6 +1,6 @@
 {
   "name": "yusukehirao.github.com",
-  "version": "2022.2.23",
+  "version": "2022.10.30",
   "description": "Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。",
   "main": "index.html",
   "repository": "git@github.com:YusukeHirao/yusukehirao.github.com.git",
@@ -8,9 +8,37 @@
   "license": "nolicense",
   "private": true,
   "scripts": {
-    "start": "php -S localhost:4000 -t ./"
+    "build": "npx @11ty/eleventy --input=src --output=_site",
+    "dev": "npx @11ty/eleventy --input=src --serve --port=3000 --watch",
+    "lint": "prettier --write **/*; markuplint src/*",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.{js,json}": [
+      "prettier --write"
+    ],
+    "./**/*.{js}": [
+      "eslint --fix"
+    ],
+    "./**/*.{hbs,html}": [
+      "markuplint"
+    ],
+    ".github/workflows/*.yml": [
+      "actionlint"
+    ]
   },
   "devDependencies": {
-    "markuplint": "^2.1.0"
+    "@11ty/eleventy": "^1.0.2",
+    "@markuplint/mustache-parser": "2",
+    "actionlint": "^2.0.5",
+    "dayjs": "^1.11.6",
+    "dotenv": "^16.0.3",
+    "husky": "^8.0.1",
+    "jsdom": "^20.0.1",
+    "lint-staged": "^13.0.3",
+    "markuplint": "2",
+    "microcms-js-sdk": "^2.3.0",
+    "prettier": "^2.7.1",
+    "rss-parser": "^3.12.0"
   }
 }
