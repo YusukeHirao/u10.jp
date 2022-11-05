@@ -1,6 +1,6 @@
 {
-  "name": "yusukehirao.github.com",
-  "version": "2022.10.30",
+  "name": "u10.jp",
+  "version": "2022.11.5",
   "description": "Webアクセシビリティエンジニア/フロントエンドエンジニア平尾ゆうてんの開発したものや関連情報を掲載しています。",
   "main": "index.html",
   "repository": "git@github.com:YusukeHirao/yusukehirao.github.com.git",
@@ -8,9 +8,12 @@
   "license": "nolicense",
   "private": true,
   "scripts": {
-    "build": "npx @11ty/eleventy --input=src --output=_site",
-    "dev": "npx @11ty/eleventy --input=src --serve --port=3000 --watch",
-    "lint": "prettier --write **/*; markuplint src/*",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "prettier --write \"./src/**/*\"; markuplint \"src/**/*\"",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -27,18 +30,30 @@
       "actionlint"
     ]
   },
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@markuplint/mustache-parser": "2",
+  "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@astrojs/svelte": "^1.0.2",
+    "@markuplint/astro-parser": "next",
+    "@markuplint/jsx-parser": "next",
+    "@markuplint/react-spec": "next",
+    "@types/jsdom": "^20.0.0",
+    "@types/react": "^18.0.25",
     "actionlint": "^2.0.5",
+    "astro": "^1.6.0",
+    "astro-compress": "^1.1.1",
+    "canvas": "^2.10.2",
     "dayjs": "^1.11.6",
     "dotenv": "^16.0.3",
     "husky": "^8.0.1",
-    "jsdom": "^20.0.1",
-    "lint-staged": "^13.0.3",
-    "markuplint": "2",
+    "jsdom": "^20.0.2",
+    "markuplint": "next",
     "microcms-js-sdk": "^2.3.0",
     "prettier": "^2.7.1",
-    "rss-parser": "^3.12.0"
+    "prettier-plugin-astro": "^0.7.0",
+    "prettier-plugin-svelte": "^2.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rss-parser": "^3.12.0",
+    "svelte": "^3.52.0"
   }
 }

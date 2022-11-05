@@ -1,11 +1,12 @@
-const Parser = require("rss-parser");
-const dayjs = require("dayjs");
-const fetch = require("node-fetch");
-const { JSDOM } = require("jsdom");
+import Parser from "rss-parser";
+import dayjs from "dayjs";
+import fetch from "node-fetch";
+import { JSDOM } from "jsdom";
+import type { Article } from "../../types";
 
-const parser = new Parser();
+const parser = new Parser<Omit<Article, "type">>();
 
-module.exports = async function () {
+export async function fetchArticles(): Promise<Article[]> {
   const zenn = await parser.parseURL("https://zenn.dev/yusukehirao/feed");
   const notePage = await fetch("https://note.com/yusukehirao");
   const noteHtml = await notePage.text();
@@ -13,11 +14,11 @@ module.exports = async function () {
   const noteTitles = noteDom.window.document.querySelectorAll(
     "h3.m-noteBody__title"
   );
-  const noteData = Array.from(noteTitles).map((el) => {
-    const title = el.textContent.trim();
+  const noteData = Array.from(noteTitles).map<Article>((el) => {
+    const title = el.textContent?.trim() || "";
     const section = el.closest("section");
     const href = section?.querySelector("a")?.href;
-    const date = section?.querySelector("time")?.getAttribute("datetime");
+    const date = section?.querySelector("time")?.getAttribute("datetime") || "";
     return {
       type: "note",
       title,
@@ -26,8 +27,9 @@ module.exports = async function () {
     };
   });
 
-  const data = [
-    ...zenn.items.map((item) => ({ ...item, type: "zenn" })),
+  const data: Article[] = [
+    // @ts-ignore
+    ...zenn.items.map<Article>((item) => ({ ...item, type: "zenn" })),
     ...noteData,
   ];
   data.sort((a, b) => {
@@ -35,4 +37,4 @@ module.exports = async function () {
   });
 
   return data;
-};
+}

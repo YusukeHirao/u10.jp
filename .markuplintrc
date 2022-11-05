@@ -3,10 +3,11 @@
     "markuplint:recommended"
   ],
   "parser": {
-    "\\.hbs$": "@markuplint/mustache-parser"
+    "\\.astro$": "@markuplint/astro-parser",
+    "\\.tsx$": "@markuplint/jsx-parser"
   },
-  "rules": {
-    "doctype": false
+  "specs": {
+    "\\.tsx$": "@markuplint/react-spec"
   },
   "nodeRules": [
     {
