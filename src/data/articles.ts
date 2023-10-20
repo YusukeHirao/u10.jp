@@ -12,7 +12,7 @@ export async function fetchArticles(): Promise<Article[]> {
   const noteHtml = await notePage.text();
   const noteDom = new JSDOM(noteHtml);
   const noteTitles = noteDom.window.document.querySelectorAll(
-    "h3.m-noteBody__title"
+    "h3.m-noteBody__title",
   );
   const noteData = Array.from(noteTitles).map<Article>((el) => {
     const title = el.textContent?.trim() || "";
