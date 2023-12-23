@@ -9,8 +9,9 @@ const parser = new Parser<Omit<Article, "type">>();
 export async function fetchArticles(): Promise<Article[]> {
   const zenn = await fetchZenn();
   const note = await fetchNote();
+  const sizume = await fetchSizume();
 
-  const data: Article[] = [...zenn, ...note];
+  const data: Article[] = [...zenn, ...note, ...sizume];
   data.sort((a, b) => {
     return dayjs(b.pubDate).unix() - dayjs(a.pubDate).unix();
   });
@@ -50,4 +51,15 @@ async function fetchNote() {
   });
 
   return noteData;
+}
+
+async function fetchSizume(): Promise<Article[]> {
+  const articles = await parser.parseURL("https://sizu.me/yusukehirao/rss");
+  return articles.items.map((item) => ({
+    ...item,
+    type: "sizume",
+    title: item.title ?? "",
+    link: item.link ?? "",
+    pubDate: item.pubDate ?? "",
+  }));
 }

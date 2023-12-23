@@ -5,6 +5,12 @@ type Props = {
   articles: Article[];
 };
 
+const typeMap: Record<Article["type"], string> = {
+  note: "note",
+  zenn: "Zenn",
+  sizume: "sizu.me",
+};
+
 export const Articles = ({ articles }: Props) => {
   return (
     <ul>
@@ -13,8 +19,8 @@ export const Articles = ({ articles }: Props) => {
           <time dateTime={dayjs(article.pubDate).format("YYYY-MM-DD")}>
             {dayjs(article.pubDate).format("YYYY年MM月DD日")}
           </time>{" "}
-          <span>[{article.type}]</span>{" "}
-          <a href={article.link} target="_blank" rel="noreferrer">
+          <span>[{typeMap[article.type]}]</span>{" "}
+          <a href={article.link} target="_blank">
             {article.title}
           </a>
         </li>

@@ -1,7 +1,7 @@
 import type { MicroCMSListContent } from "microcms-js-sdk";
 
 export type Article = {
-  type: "note" | "zenn";
+  type: "note" | "zenn" | "sizume";
   title: string;
   link: string;
   pubDate: string;
