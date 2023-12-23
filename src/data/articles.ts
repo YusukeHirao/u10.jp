@@ -7,7 +7,29 @@ import type { Article } from "../../types";
 const parser = new Parser<Omit<Article, "type">>();
 
 export async function fetchArticles(): Promise<Article[]> {
-  const zenn = await parser.parseURL("https://zenn.dev/yusukehirao/feed");
+  const zenn = await fetchZenn();
+  const note = await fetchNote();
+
+  const data: Article[] = [...zenn, ...note];
+  data.sort((a, b) => {
+    return dayjs(b.pubDate).unix() - dayjs(a.pubDate).unix();
+  });
+
+  return data;
+}
+
+async function fetchZenn(): Promise<Article[]> {
+  const articles = await parser.parseURL("https://zenn.dev/yusukehirao/feed");
+  return articles.items.map((item) => ({
+    ...item,
+    type: "zenn",
+    title: item.title ?? "",
+    link: item.link ?? "",
+    pubDate: item.pubDate ?? "",
+  }));
+}
+
+async function fetchNote() {
   const notePage = await fetch("https://note.com/yusukehirao");
   const noteHtml = await notePage.text();
   const noteDom = new JSDOM(noteHtml);
@@ -27,14 +49,5 @@ export async function fetchArticles(): Promise<Article[]> {
     };
   });
 
-  const data: Article[] = [
-    // @ts-ignore
-    ...zenn.items.map<Article>((item) => ({ ...item, type: "zenn" })),
-    ...noteData,
-  ];
-  data.sort((a, b) => {
-    return dayjs(b.pubDate).unix() - dayjs(a.pubDate).unix();
-  });
-
-  return data;
+  return noteData;
 }
