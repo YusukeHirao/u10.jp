@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
-import { createClient, MicroCMSListResponse } from "microcms-js-sdk";
+import type { MicroCMSListResponse } from "microcms-js-sdk";
+import { createClient } from "microcms-js-sdk";
 import type { Speak } from "../../types";
 
 dotenv.config();
