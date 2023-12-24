@@ -5,6 +5,9 @@ type Props = {
   speaks: Speak[];
 };
 
+// @ts-ignore
+dayjs.tz.setDefault("Asia/Tokyo");
+
 export const Speaks = ({ speaks }: Props) => {
   return (
     <ul>
