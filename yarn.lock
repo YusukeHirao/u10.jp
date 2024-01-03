@@ -608,7 +608,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@markuplint/astro-parser@^4.0.0-alpha.6":
+"@markuplint/astro-parser@^4.0.0-alpha.7":
   version "4.0.0-dev.28"
   resolved "https://registry.yarnpkg.com/@markuplint/astro-parser/-/astro-parser-4.0.0-dev.28.tgz#6fe1e48754a65f10d857e166d0da25842f957944"
   integrity sha512-YKvvbTs3SPYECjacii24v6vZGl3hD3UadjnS6KWGk+ucAuPkGTaDtq3+/ajHmkQgERRsvLWAJesb8dy3sDGIvA==
@@ -677,7 +677,7 @@
   resolved "https://registry.yarnpkg.com/@markuplint/i18n/-/i18n-4.0.0-dev.28.tgz#4c0ed07cd96569782721b1e8184d103433955b39"
   integrity sha512-n27GSneKb4P09kV84WOXbg5xu2Lm8hdaDIYqx9b7xRlApHfzO9vRhv3S/cpBEBQTW4KyrSF1J/UI4W9951wKsQ==
 
-"@markuplint/jsx-parser@^4.0.0-alpha.6":
+"@markuplint/jsx-parser@^4.0.0-alpha.7":
   version "4.0.0-dev.28"
   resolved "https://registry.yarnpkg.com/@markuplint/jsx-parser/-/jsx-parser-4.0.0-dev.28.tgz#50c67b07e0fd731333aba5a32a6a4d376ebf82fa"
   integrity sha512-bT6JNQ7XUiehi8xXb9ypVBwjBkcMcV2SDeuPvuSKtgE/Kp+qrgyKPaYP55SGQWyCKAkkC/w6bxAkh0Ry+ox3xw==
@@ -749,7 +749,7 @@
     type-fest "^4.5.0"
     uuid "^9.0.1"
 
-"@markuplint/react-spec@^4.0.0-alpha.6":
+"@markuplint/react-spec@^4.0.0-alpha.7":
   version "4.0.0-dev.28"
   resolved "https://registry.yarnpkg.com/@markuplint/react-spec/-/react-spec-4.0.0-dev.28.tgz#8e54ea1eb9c917874074040fe3d4f04829451685"
   integrity sha512-V0xiPH3VwEnRcM1mw3MJsDMzlk72KOAu5JwRCCjspFANVjcKzQ+vPbV/fjCCKc5jySw0BBASL2D1uiOypqeDXQ==
@@ -3059,7 +3059,7 @@ markdown-table@^3.0.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
   integrity sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==
 
-markuplint@^4.0.0-alpha.6:
+markuplint@^4.0.0-alpha.7:
   version "4.0.0-dev.28"
   resolved "https://registry.yarnpkg.com/markuplint/-/markuplint-4.0.0-dev.28.tgz#73aae28ad2e700f66b152bbad613ef9b718edcde"
   integrity sha512-bViinp5o/qNCx5YZg3nfhmwfu44wC69anwgSXlD+7Psp+JSaWHvpM9KqVLTojkVE1k3nh2UB+ZLNN/m7GQ38rA==
