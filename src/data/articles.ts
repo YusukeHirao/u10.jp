@@ -31,26 +31,14 @@ async function fetchZenn(): Promise<Article[]> {
 }
 
 async function fetchNote() {
-  const notePage = await fetch("https://note.com/yusukehirao");
-  const noteHtml = await notePage.text();
-  const noteDom = new JSDOM(noteHtml);
-  const noteTitles = noteDom.window.document.querySelectorAll(
-    "h3.m-noteBody__title:not(.line-clamp-2)",
-  );
-  const noteData = Array.from(noteTitles).map<Article>((el) => {
-    const title = el.textContent?.trim() || "";
-    const section = el.closest("section");
-    const href = section?.querySelector("a")?.href;
-    const date = section?.querySelector("time")?.getAttribute("datetime") || "";
-    return {
-      type: "note",
-      title,
-      link: `https://note.com${href}`,
-      pubDate: date,
-    };
-  });
-
-  return noteData;
+  const rss = await parser.parseURL("https://note.com/yusukehirao/rss");
+  const nodeData = rss.items.map((item) => ({
+    type: "note",
+    title: item.title ?? "",
+    link: item.link ?? "",
+    pubDate: item.pubDate ?? "",
+  }));
+  return nodeData;
 }
 
 async function fetchSizume(): Promise<Article[]> {
