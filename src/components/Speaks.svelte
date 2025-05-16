@@ -12,13 +12,13 @@
         <time dateTime={dayjs(speak.date).format("YYYY-MM-DD")}>
           {dayjs(speak.date).format("YYYY年MM月DD日")}
         </time>{" "}
-        <a href={speak.eventUrl} target="_blank" rel="noreferrer">
+        <a href={speak.eventUrl} target="_blank">
           {speak.eventName}
         </a>
       </div>
       <div>
         {#if speak.slideUrl}
-          <a href={speak.slideUrl} target="_blank" rel="noreferrer">
+          <a href={speak.slideUrl} target="_blank">
             {speak.sessionTitle}
           </a>
         {:else}
@@ -28,9 +28,7 @@
           {" "}
           <span>
             (
-            <a href={speak.videoArchiveUrl} target="_blank" rel="noreferrer">
-              動画
-            </a>
+            <a href={speak.videoArchiveUrl} target="_blank"> 動画 </a>
             )
           </span>
         {/if}
