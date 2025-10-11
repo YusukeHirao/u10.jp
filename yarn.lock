@@ -1294,9 +1294,7 @@ astro-eslint-parser@1.2.2:
     semver "^7.3.8"
 
 astro@^5.7.13:
-  version "5.7.13"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-5.7.13.tgz#48d15f9949659baf9a328b9838a715ce6e268ade"
-  integrity sha512-cRGq2llKOhV3XMcYwQpfBIUcssN6HEK5CRbcMxAfd9OcFhvWE7KUy50zLioAZVVl3AqgUTJoNTlmZfD2eG0G1w==
+  version "5.14.3"
   dependencies:
     "@astrojs/compiler" "^2.11.0"
     "@astrojs/internal-helpers" "0.6.1"
