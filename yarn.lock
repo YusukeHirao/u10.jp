@@ -3910,9 +3910,7 @@ svelte2tsx@^0.7.42:
     scule "^1.3.0"
 
 svelte@^5.30.1:
-  version "5.41.1"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-5.41.1.tgz#f676f1f29ed17f807c610696429ea065ce8c2ad4"
-  integrity sha512-0a/huwc8e2es+7KFi70esqsReRfRbrT8h1cJSY/+z1lF0yKM6TT+//HYu28Yxstr50H7ifaqZRDGd0KuKDxP7w==
+  version "5.46.3"
   dependencies:
     "@jridgewell/remapping" "^2.3.4"
     "@jridgewell/sourcemap-codec" "^1.5.0"
