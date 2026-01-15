@@ -1,7 +1,5 @@
 import Parser from "rss-parser";
 import dayjs from "dayjs";
-import fetch from "node-fetch";
-import { JSDOM } from "jsdom";
 import type { Article } from "../../types";
 
 const parser = new Parser<Omit<Article, "type">>();
@@ -32,7 +30,7 @@ async function fetchZenn(): Promise<Article[]> {
 
 async function fetchNote() {
   const rss = await parser.parseURL("https://note.com/yusukehirao/rss");
-  const nodeData = rss.items.map((item) => ({
+  const nodeData = rss.items.map<Article>((item) => ({
     type: "note",
     title: item.title ?? "",
     link: item.link ?? "",
