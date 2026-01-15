@@ -44,7 +44,6 @@
     "dayjs": "^1.11.19",
     "dotenv": "^17.2.3",
     "husky": "^9.1.7",
-    "jsdom": "^27.4.0",
     "markuplint": "^4.14.0",
     "microcms-js-sdk": "^3.2.0",
     "prettier": "^3.8.0",
