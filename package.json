@@ -37,7 +37,7 @@
     "@markuplint/astro-parser": "^4.6.22",
     "@markuplint/jsx-parser": "^4.7.22",
     "@markuplint/react-spec": "^4.5.22",
-    "@types/jsdom": "^27.0.0",
+    "@types/jsdom": "^28.0.0",
     "@types/react": "^19.2.8",
     "actionlint": "^2.0.6",
     "astro": "^5.16.9",
