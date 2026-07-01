@@ -64,6 +64,11 @@ const speaks = await fetchSpeaks();
       </section>
 
       <section>
+        <h2>登壇</h2>
+        <Speaks speaks={speaks} />
+      </section>
+
+      <section>
         <h2>記事</h2>
         <h3>ブログ</h3>
         <Articles articles={articles} />
@@ -88,11 +93,6 @@ const speaks = await fetchSpeaks();
             >
           </li>
         </ul>
-      </section>
-
-      <section>
-        <h2>登壇</h2>
-        <Speaks speaks={speaks} />
       </section>
 
       <section>
